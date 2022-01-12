@@ -4,7 +4,7 @@ import { axiosConfig } from '../globals'
 export const GetMovies = async () => {
   try {
     const res = await Client.get('/discover/movie', axiosConfig)
-    console.log(res.data.results)
+
     return res.data.results
   } catch (error) {
     throw error
