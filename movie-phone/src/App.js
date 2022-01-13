@@ -1,15 +1,21 @@
 import './styles/App.css'
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 import MovieList from './components/MovieList'
 import MovieDetails from './components/MovieDetails'
-import { Routes, Route } from 'react-router-dom'
+import Nav from './components/Nav'
+import Home from './components/Home'
 
 function App() {
   return (
     <div>
-      <h1>Movie Phone</h1>
+      <header>
+        <Nav />
+      </header>
+
       <Routes>
-        <Route path="/home" element={<MovieList />}></Route>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/movie" element={<MovieList />}></Route>
         <Route path="/movie/:id" element={<MovieDetails />}></Route>
       </Routes>
     </div>
